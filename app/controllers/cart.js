@@ -4,14 +4,13 @@ export default class CartController extends Controller {
   get subtotal() {
     return this.model.items
       .reduce((acc, item) => acc + item.price, 0)
-      .toFixed(2);
   }
 
   get tax() {
-    return (0.12 * this.subtotal).toFixed(2);
+    return (0.12 * this.subtotal);
   }
 
   get total() {
-    return (+this.subtotal + +this.tax).toFixed(2);
+    return (+this.subtotal + +this.tax);
   }
 }
