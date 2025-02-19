@@ -5,14 +5,14 @@ export default class currency extends Helper {
     // first arg is array of values
     // second arg is an object
     const [number] = params;
-    const { sign = "$" } = named;
+    const { sign = '$' } = named;
     const dollars = Math.floor(number);
-    let cents = Math.floor(number * 100 % 100);
+    let cents = Math.floor((number * 100) % 100);
 
     if (cents.toString().length === 1) {
       cents = '0' + cents;
     }
 
-    return `${sign}${dollars}.${cents}`
+    return `${sign}${dollars}.${cents}`;
   }
 }
